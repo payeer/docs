@@ -1,5 +1,5 @@
 # Documentation for the Payeer Trade API
 
 Select a language:
-* [English](en.md)
-* [Русский](ru.md)
+* [English](trade-api/en.md)
+* [Русский](trade-api/ru.md)
