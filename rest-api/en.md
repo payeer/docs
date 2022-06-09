@@ -428,7 +428,7 @@ You can check the existence of an account number prior to transfer in the Payeer
 
 ### Checking Existence of Account [POST]
 
-If the <code>errors</code> array is blank, this means that the user exists.
+If <code>success=true</code>, this means that the user exists.
 
 + Request
     
@@ -444,7 +444,7 @@ If the <code>errors</code> array is blank, this means that the user exists.
 
     + Body
     
-            {"auth_error":"0","errors":[]}
+            {"auth_error":"0","errors":[],"success":true}
         
 
 ## Automatic Conversion Rates
