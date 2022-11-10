@@ -110,6 +110,39 @@ response_body = urlopen(request).read()
 print response_body
 ```
 
+<br>
+<b>Node.js</b><br>
+
+```node.js
+var crypto = require('crypto')
+	request = require('request');
+
+apiId = 'bd443f00-092c-4436-92a4-a704ef679e24';
+apiSecret = 'api_secret_key';
+
+method = 'account';
+
+ts = Math.floor(new Date().getTime());
+
+req = JSON.stringify({
+    'ts': ts,
+});
+
+sign = crypto.createHmac('sha256', apiSecret).update(method+req).digest('hex');
+
+request({
+  method: 'POST',
+  url: 'https://payeer.com/api/trade/' + method,
+  headers: {
+    'Content-Type': 'application/json',
+    'API-ID': apiId,
+    'API-SIGN': sign
+  },
+  body: req
+}, function (error, response, body) {
+	console.log(body);
+});
+```
 
 ## Errors
 
